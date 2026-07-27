@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<article class="article wrap">
+  <header class="article-header">
+    <p class="eyebrow">{{ page.category | default: "Analytics" }}</p>
+    <h1>{{ page.title }}</h1>
+    <p class="article-meta">{{ page.date | date: "%B %-d, %Y" }} · {{ page.read_time | default: "6 min read" }}</p>
+    {% if page.summary %}<p class="article-summary">{{ page.summary }}</p>{% endif %}
+  </header>
+  <div class="prose">{{ content }}</div>
+</article>
