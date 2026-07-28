@@ -4,9 +4,9 @@ title: Product Analytics
 ---
 
 <section class="hero"><div class="wrap">
-  <p class="eyebrow">Product Analytics · Experimentation · Payments</p>
+  <p class="eyebrow">Product Analytics · Experimentation · Data Visualization</p>
   <h1>Turning customer behavior into better product decisions.</h1>
-  <p class="lede">I write practical frameworks for product teams on experimentation, metrics, payments analytics, SQL, and decision-ready dashboards.</p>
+  <p class="lede">I write practical frameworks for product teams on experimentation, product analytics, anddecision-ready dashboards.</p>
   <div class="actions"><a class="button" href="{{ '/articles' | relative_url }}">Read the articles</a><a class="text-link" href="{{ '/about' | relative_url }}">About me →</a></div>
 </div></section>
 
