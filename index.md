@@ -18,5 +18,5 @@ title: Product Analytics
 <section class="wrap section focus"><p class="eyebrow">What I cover</p><div class="pillars">
   <div><h3>Product Analytics</h3><p>Enrollment, activation, retention, payment volume, and customer behavior.</p></div>
   <div><h3>Experimentation</h3><p>Hypotheses, metric design, guardrails, and decisions that go beyond p-values.</p></div>
-  <div><h3>Data Visualization</h3><p>SQL, dashboards, KPI design, and communication that helps teams act.</p></div>
+  <div><h3>Data Visualization</h3><p>Dashboards, KPIs, and communication that helps teams act.</p></div>
 </div></section>
