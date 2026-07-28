@@ -45,3 +45,22 @@ h1,h2,h3 { line-height:1.12; letter-spacing:-.035em; } h1 { max-width:860px; mar
 .prose {
   color: #d9e2ec;
 }
+
+
+.article-figure {
+  margin: 32px 0;
+}
+
+.article-figure img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.article-figure figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
