@@ -19,3 +19,12 @@ Stephen Few: http://www.perceptualedge.com/
 Cole Nussbaumer: http://www.storytellingwithdata.com/
 
 
+<figure class="article-figure">
+  <img
+    src="{{ '/assets/images/sales-dashboard-final.png' | relative_url }}"
+    alt="Tableau dashboard showing monthly laptop sales by model, retail store, and customer-preferred features"
+    loading="lazy">
+  <figcaption>Example Tableau dashboard for tracking monthly laptop sales and customer feature preferences.</figcaption>
+</figure>
+
+
