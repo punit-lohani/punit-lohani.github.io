@@ -1,5 +1,3 @@
-title: "Principles for Clear, Effective Dashboards"
-
 ---
 layout: post
 title: "Principles for Clear, Effective Dashboards"
