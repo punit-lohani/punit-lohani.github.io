@@ -16,6 +16,6 @@ Stephen Few: http://www.perceptualedge.com/
 Cole Nussbaumer: http://www.storytellingwithdata.com/
 
 
-![Tableau dashboard showing monthly laptop sales, models, stores, and customer feature preferences](https://punitlohani-umn.github.io/assets/images/sales-dashboard-final.png)
+![Tableau dashboard showing monthly laptop sales, models, stores, and customer feature preferences](https://punit-lohani.github.io/assets/images/sales-dashboard-final.png)
 
 
