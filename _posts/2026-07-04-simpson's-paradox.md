@@ -7,6 +7,8 @@ summary: "Addressing Simpson's Paradox in business decisions."
 ---
 
 What is Simpson's Paradox?
+Simpson's paradox is a statistical phenomenon where a trend appearing in different groups of data disappears or reverses when those groups are combined. 
+
 Imagine you compare two strategies and discover that Strategy A performs better than Strategy B in every individual group you examine. Naturally, you'd expect Strategy A to perform better overall as well.
 Surprisingly, when you combine all the groups, the opposite can happen: Strategy B appears to outperform Strategy A.
 This counterintuitive phenomenon is known as Simpson's Paradox—a statistical paradox in which a trend that exists within multiple groups disappears or even reverses when the groups are combined.
