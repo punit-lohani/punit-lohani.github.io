@@ -2,7 +2,7 @@
 layout: post
 title: "Statistical Significance Isn’t Enough"
 category: Experimentation
-read_time: 6 min read
+read_time: 4 min read
 summary: "A practical framework for deciding whether an A/B test result is a product win."
 ---
 
