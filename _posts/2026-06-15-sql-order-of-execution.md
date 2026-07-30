@@ -1,25 +1,25 @@
 ---
 layout: post
-title: "Statistical Significance Isn’t Enough"
-category: Experimentation
-read_time: 4 min read
-summary: "A practical framework for deciding whether an A/B test result is a product win."
+title: "SQL Order of Execution"
+category: SQL
+read_time: 2 min read
+summary: "A concise guide to the logical order in which SQL query clauses are evaluated."
 ---
 
-## What Is SQL Order of Execution?
+## What Is the SQL Order of Execution?
 
-SQL order of execution refers to the order in which the different clauses in the query are evaluated. It's worth understanding because the execution order is usually different from how we write the SQL queries. To take the most simple example, you might think that in the case of SELECT * FROM database, the SELECT is evaluated first, but really the order of execution starts with it’s the FROM clause.
+The SQL order of execution is the logical order in which a database evaluates the clauses in a query. It is worth understanding because this order differs from the order in which we write SQL.
 
-## Here is the SQL order of execution.
+For example, in `SELECT * FROM database`, it may look as though `SELECT` is evaluated first. In practice, processing begins with the `FROM` clause, which identifies the source data.
 
----
-FROM/JOIN: Specifies the tables from which to retrieve data.
-WHERE: Filters the rows that meet the condition before grouping.
-GROUP BY: Groups rows that share a property.
-HAVING: Filters groups based on conditions, applied after grouping.
-SELECT: Specifies the columns to retrieve or calculate.
-DISTINCT: Removes duplicate rows from the result set.
-ORDER BY: Sorts the result set by specified columns.
-LIMIT: Specifies the maximum number of rows to return.
-OFFSET: Specifies how many rows to skip before starting to return rows.
----
+## SQL Order of Execution
+
+1. **`FROM` / `JOIN`**: Identifies the tables from which to retrieve data and combines them when necessary.
+2. **`WHERE`**: Filters rows before they are grouped.
+3. **`GROUP BY`**: Groups rows that share a common value.
+4. **`HAVING`**: Filters groups after grouping has occurred.
+5. **`SELECT`**: Specifies the columns or expressions to return.
+6. **`DISTINCT`**: Removes duplicate rows from the result set.
+7. **`ORDER BY`**: Sorts the result set by the specified columns or expressions.
+8. **`LIMIT`**: Sets the maximum number of rows to return.
+9. **`OFFSET`**: Skips a specified number of rows before returning results.
