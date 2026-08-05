@@ -3,10 +3,10 @@ layout: post
 title: "The SQL LEFT JOIN Trap: Filtering Dates in ON vs. WHERE"
 category: SQL
 read_time: 4 min read
-summary: "A practical lesson on how date-filter placement changes a LEFT JOIN—and why users with zero matching transactions can disappear."
+summary: "A practical lesson on how date-filter placement changes a LEFT JOIN and why users with zero matching transactions can disappear."
 ---
 
-I recently came across an interesting SQL issue while trying to count transactions for every user during a specific date range—including users with zero transactions.
+I recently came across an interesting SQL issue while trying to count transactions for every user during a specific date range, including users with zero transactions.
 
 It became a useful lesson in how placing a date filter in the `ON` clause versus the `WHERE` clause can completely change the result of a `LEFT JOIN`.
 
@@ -34,7 +34,7 @@ transaction_id | user_id | transaction_time
 5003           | 102     | 2023-06-10
 ```
 
-Here:
+Here let's say:
 
 - Alex made two transactions during the reporting period.
 - Jordan made a transaction before the reporting period.
@@ -72,7 +72,7 @@ Taylor received the expected count of zero, but Jordan disappeared instead of re
 
 ## What Went Wrong?
 
-A `LEFT JOIN` initially preserves every row from the left table—in this case, `users`.
+A `LEFT JOIN` initially preserves every row from the left table, in this case, `users`.
 
 For Taylor, who has no transactions, SQL creates an intermediate row with `NULL` transaction values:
 
