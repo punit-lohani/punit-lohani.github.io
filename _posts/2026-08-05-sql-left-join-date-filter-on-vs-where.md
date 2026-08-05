@@ -2,8 +2,8 @@
 layout: post
 title: "SQL Filtering on JOIN vs. WHERE condition"
 category: SQL
-read_time: 4 min read
-summary: "A practical lesson on how date-filter placement changes a LEFT JOIN and why users with zero matching transactions can disappear."
+read_time: 10 min read
+summary: "A practical lesson on how placement of filter in SQL code changes the output"
 ---
 
 I recently came across an interesting SQL issue while trying to count transactions for every user during a specific date range, including users with zero transactions.
@@ -46,7 +46,7 @@ The goal was to count transactions from July through September for every registe
 
 My initial query looked reasonable:
 
-```vbnet
+```sql
 SELECT
   u.user_id,
   COUNT(DISTINCT t.transaction_id) AS transaction_count
