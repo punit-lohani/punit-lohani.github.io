@@ -64,3 +64,73 @@ h1,h2,h3 { line-height:1.12; letter-spacing:-.035em; } h1 { max-width:860px; mar
   font-size: 0.9rem;
   text-align: center;
 }
+
+/* SQL code blocks */
+.language-sql.highlighter-rouge {
+  position: relative;
+  margin: 28px 0;
+  padding-top: 54px;
+  overflow: hidden;
+  background: #242424;
+  border-radius: 16px;
+}
+
+.language-sql.highlighter-rouge::before {
+  content: "SQL";
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  color: #c5c5c5;
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+}
+
+.language-sql .highlight {
+  margin: 0;
+  background: transparent;
+}
+
+.language-sql pre.highlight {
+  margin: 0;
+  padding: 22px 16px;
+  overflow-x: auto;
+  background: transparent;
+  color: #f5f5f5;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.language-sql .k {
+  color: #38bdf8; /* keywords */
+}
+
+.language-sql .s,
+.language-sql .s1,
+.language-sql .s2 {
+  color: #10bfa3; /* strings and dates */
+}
+
+.language-sql .o {
+  color: #f5f5f5; /* operators */
+}
+
+.language-sql .nf {
+  color: #f59e0b; /* functions */
+}
+
+.code-copy-button {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  padding: 6px 10px;
+  border: 0;
+  color: #aaa;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.code-copy-button:hover {
+  color: #fff;
+}
