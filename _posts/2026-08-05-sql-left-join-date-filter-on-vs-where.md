@@ -2,11 +2,11 @@
 layout: post
 title: "The SQL LEFT JOIN Trap: Filtering Dates in ON vs. WHERE"
 category: SQL
-read_time: 10 min read
-summary: "A practical lesson on how date-filter placement changes a LEFT JOIN and why users with zero matching transactions can disappear."
+read_time: 4 min read
+summary: "A practical lesson on how date-filter placement changes a LEFT JOIN—and why users with zero matching transactions can disappear."
 ---
 
-I recently came across an interesting SQL issue while trying to count transactions for every user during a specific date range, including users with zero transactions.
+I recently came across an interesting SQL issue while trying to count transactions for every user during a specific date range—including users with zero transactions.
 
 It became a useful lesson in how placing a date filter in the `ON` clause versus the `WHERE` clause can completely change the result of a `LEFT JOIN`.
 
@@ -40,33 +40,35 @@ Here:
 - Jordan made a transaction before the reporting period.
 - Taylor has never made a transaction.
 
-The goal was to count transactions from July through September for every registered user including users with zero transactions.
+The goal was to count transactions from July through September for every registered user—including users with zero qualifying transactions.
 
 ## My First Attempt
 
 My initial query looked reasonable:
 
-```sql
+```vbnet
 SELECT
   u.user_id,
   COUNT(DISTINCT t.transaction_id) AS transaction_count
 FROM users u
 LEFT JOIN transactions t
   ON u.user_id = t.user_id
-WHERE t.transaction_time >= '2023-07-01'
-  AND t.transaction_time <  '2023-10-01'
+WHERE (t.transaction_time >= '2023-07-01'
+  AND t.transaction_time <  '2023-10-01')
+  OR (t.transaction_time IS NULL)
 GROUP BY u.user_id;
 ```
 
-I expected the result to include all three users. Instead, it returned only Alex:
+I added the `IS NULL` condition because I expected it to preserve users with no transactions. The query returned Alex and Taylor, but Jordan was still missing:
 
 ```text
 user_id | transaction_count
 --------+------------------
 101     | 2
+103     | 0
 ```
 
-Jordan and Taylor disappeared instead of receiving a transaction count of zero.
+Taylor received the expected count of zero, but Jordan disappeared instead of receiving a zero.
 
 ## What Went Wrong?
 
@@ -90,9 +92,11 @@ user_id | transaction_id | transaction_time
 
 The important detail is that SQL applies the `WHERE` clause after the join.
 
-Taylor's `NULL` timestamp does not satisfy the date condition, while Jordan's June timestamp falls outside the range. SQL therefore removes both rows.
+Taylor has no matching transaction row, so the `LEFT JOIN` supplies `NULL` values for the transaction columns. The `OR t.transaction_time IS NULL` condition preserves that row.
 
-By filtering the right-side table in `WHERE`, I had unintentionally made the `LEFT JOIN` behave like an `INNER JOIN`.
+Jordan is different. He has a matching transaction, so his timestamp is not `NULL`. However, that transaction occurred in June and falls outside the reporting period. Neither side of the `WHERE` condition is true, so SQL removes his row entirely.
+
+This is the subtle trap: checking for `NULL` only preserves users who have no transaction rows at all. It does not preserve users who have transactions, but none within the selected date range.
 
 ## The Fix: Move the Date Filter Into the Join
 
