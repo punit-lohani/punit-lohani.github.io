@@ -40,7 +40,7 @@ Here:
 - Jordan made a transaction before the reporting period.
 - Taylor has never made a transaction.
 
-The goal was to count transactions from July through September for every registered user—including users with zero qualifying transactions.
+The goal was to count transactions from July through September for every registered user including users with zero transactions.
 
 ## My First Attempt
 
