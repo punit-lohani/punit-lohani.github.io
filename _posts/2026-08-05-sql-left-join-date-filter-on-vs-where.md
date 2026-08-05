@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The SQL LEFT JOIN Trap: Filtering in ON vs. WHERE"
+title: "SQL Filtering ON JOIN vs. WHERE CONDITION"
 category: SQL
 read_time: 4 min read
 summary: "A practical lesson on how date-filter placement changes a LEFT JOIN and why users with zero matching transactions can disappear."
