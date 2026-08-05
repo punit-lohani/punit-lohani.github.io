@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SQL Filtering ON JOIN vs. WHERE CONDITION"
+title: "SQL Filtering on JOIN vs. WHERE condition"
 category: SQL
 read_time: 4 min read
 summary: "A practical lesson on how date-filter placement changes a LEFT JOIN and why users with zero matching transactions can disappear."
